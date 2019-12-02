@@ -201,11 +201,11 @@ body {
     height:7px;
     }
     .sidebar {
-      height: 400px;
+      height: 0px;
       width: 250px;
       left: 0px;
       padding: 0%;
-      top: 0px;
+      top: -100px;
       border-top: solid;
     }
     .head{
