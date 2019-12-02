@@ -3,34 +3,33 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Leaflet Control.Layers</title>
+  <title>Toxic Release Inventory Hazard Index Viewer for Lung Carcinogen Exposure</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-
   <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="css/stylem.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
   crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
   crossorigin=""></script>
-
-
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js"
   integrity="sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ=="
   crossorigin=""></script>
-
-
   <style>
 
     html { height:100%;}
 
-body {
+/*body {
     height:100%;
     padding: 0;
     margin: 0;
-}
-.map {
+}*/
+/*.map {
   position: absolute;
   left: 350px;
   right: 0;
@@ -47,9 +46,9 @@ body {
   padding: 20px;
   overflow: hidden;
   overflow-y: auto;
-}
+}*/
 
-.info {
+/*.info {
     z-index: 1000;
     position: absolute;
     right: 40%;
@@ -61,13 +60,13 @@ body {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-}
+}*/
 
-.info h1 {
+/*.info h1 {
     font-size: 16px;
     margin: 0 0 5px;
     color: #777777;
-}
+}*/
 .legend {
     line-height: 18px;
     color: #333333;
@@ -93,13 +92,7 @@ body {
     margin: 0;
 }
 
-@media screen and (min-width: 480px) and (max-width: 800px) {
 
-}
-
-@media screen and (max-width: 479px) {
-
-}
   </style>
 </head>
 <body>
@@ -117,12 +110,56 @@ body {
     <script src="js/acc2003_2008.js"></script>
     <script src="js/acc2009_2012.js"></script>
     <script src="js/acc2013_2017.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+       <!-- Modal -->
+       <div class ="sidebar container-fluid">
+        <div><h5>TRI Exposomics <br>     Explorer</h5></div>
+      <div class = "row">
+
+        <center>
+        <!-- <span class= "col-sm-6" style="left -40px"><input id="dest" type="text" size="12" placeholder= " enter an address"></span>
+        <span class= "col-sm-6"><button id="calculate" class= "btn-primary">Go!</button></span> -->
+        <span class = "col-sm-6">
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">More Info</button>
+        </span>
+      </center>
+      </div>
+  </div>
+    <div id="myModal" class="modal fade modal-dialog modal-md modalbox container-fluid" role="dialog">
+      <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title text-center"><b>Welcome to the Exposomics Explorer App!<b></h4>
+           </div>
+           <div class="modal-body text-center well">
+             <p style="margin-left:20px "> Explore Lung Cancer Risk By Zipcode for the Abramson Cancer Center Catchment Area and Philadelphia <br>
+                 This app was developed using the US-EPA's Toxic Release Inventory from 1987 to 2017 and US-EPA's Risk Assessment Model</p>
+           </div>
+           <div class="modal-body text-center well" style="background-color: tomato">
+             <p style="padding-left:25px">
+                <div><center><h2 class="h3">From <span style="color:blue">Prevention</span> to <span style="color:red">Care</span></h2></center></div>
+              </p></h6>
+           </div>
+           <div class= "modal-body well">
+             <a href = 'https://www.epa.gov/toxics-release-inventory-tri-program' ><button class="button1"> More About TRI</button><a>
+             <a href = 'https://www.pennmedicine.org/cancer/cancer-research'><button class="button1"> More About ACC.</button><a>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+<!-- 
     <div class="sidebar">
       <div align = "right"><center><h3>TRI Lung Carcinogen Hazard Profile </h3></center></div>
       <center><h2 class="h3">From <span style="color:blue">Prevention</span> to <span style="color:red">Care</span></h2></center>
       <center><img class= "smaller-image" src = "https://www.upennprc.org/assets/abramson-cancer-2.png" style="width:300px;height:120px;"></img></center>
-    </div>
+    </div> -->
     
   <div id="map" class="map"></div>
     <!-- Sidebar -->
@@ -455,7 +492,7 @@ function highlightFeature(e){
 // Add Scale Bar to Map
 L.control.scale({position: 'topleft'}).addTo(map);
 // Create Leaflet Control Object for Legend
-var legend = L.control({position: 'topleft'}).addTo(map);
+var legend = L.control({position: 'topleft'});
 
 legend.onAdd = function (map) {
     // Create Div Element and Populate it with HTML
