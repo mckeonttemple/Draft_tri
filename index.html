@@ -412,7 +412,8 @@
   };
 
   // https://leafletjs.com/reference.html#control-layers
-  L.control.layers(baseLayers, overlays,{collapsed:false}).addTo(map);
+  // L.control.layers(baseLayers, overlays,{collapsed:false}).addTo(map);
+  L.control.layers(baseLayers, overlays).addTo(map);
 
   function resetHighlight(e) {
     philly1987_1997 .resetStyle(e.target).bringToBack();
