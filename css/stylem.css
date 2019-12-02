@@ -185,7 +185,7 @@ body {
 @media screen and (max-width: 479px) {
   p {
       left: -40px;
-      top: 100px;
+      top: 0px;
       position: relative;
   }
 
@@ -201,6 +201,7 @@ body {
     height:7px;
     }
     .sidebar {
+      position: absolute;
       height: 0px;
       width: 250px;
       left: 0px;
