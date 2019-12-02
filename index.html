@@ -36,8 +36,8 @@
   bottom: 0;
   top: 0px;
 }
-
-.sidebar {
+*/
+/*.sidebar {
   position: absolute;
   left: 0px;
   width: 330px;
@@ -211,7 +211,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -225,7 +225,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -239,7 +239,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -253,7 +253,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -267,7 +267,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -281,7 +281,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -295,7 +295,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -309,7 +309,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -323,7 +323,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -337,7 +337,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -351,7 +351,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -365,7 +365,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -379,7 +379,7 @@
             });
             layer.bindPopup('zipcode: '+feature.properties.ZCTA5CE10 + "<br>" 
                 + 'Hazard Index: ' +feature.properties.total_tox_ + "<br>" 
-                + 'chemical list' +feature.properties.tally_chem);
+                + 'Chemicals Present: ' +feature.properties.tally_chem);
         }
     }).bringToBack();
 
@@ -411,9 +411,12 @@
     'ACC 2013 to 2017' : acc2013_2017
   };
 
-  // https://leafletjs.com/reference.html#control-layers
   // L.control.layers(baseLayers, overlays,{collapsed:false}).addTo(map);
-  L.control.layers(baseLayers, overlays).addTo(map);
+  L.control.layers( baseLayers, overlays).addTo(map);
+
+
+
+
 
   function resetHighlight(e) {
     philly1987_1997 .resetStyle(e.target).bringToBack();
@@ -494,7 +497,7 @@ function highlightFeature(e){
 // Add Scale Bar to Map
 L.control.scale({position: 'topleft'}).addTo(map);
 // Create Leaflet Control Object for Legend
-var legend = L.control({position: 'topleft'});
+var legend = L.control({position: 'topright'}).bringToFront;
 
 legend.onAdd = function (map) {
     // Create Div Element and Populate it with HTML
