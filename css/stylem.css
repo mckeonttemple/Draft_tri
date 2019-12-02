@@ -181,7 +181,7 @@ body {
   background-color: powderblue;
 }
 }
-@media screen and (max-width: 479px) {
+@media screen and (min-width: 200px) and (max-width: 479px) {
   p {
       left: -40px;
       top: 100px;
@@ -204,7 +204,7 @@ body {
       width: 250px;
       left: 0px;
       padding: 0%;
-      top: 0px;
+      top: -100px;
       border-top: solid;
     }
     .head{
