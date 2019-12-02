@@ -181,7 +181,7 @@ body {
   background-color: powderblue;
 }
 }
-@media screen and (min-width: 200px) and (max-width: 479px) {
+@media screen  (max-width: 479px) {
   p {
       left: -40px;
       top: 100px;
@@ -200,6 +200,7 @@ body {
     height:7px;
     }
     .sidebar {
+      position: absolute;
       height: 500px;
       width: 250px;
       left: 0px;
