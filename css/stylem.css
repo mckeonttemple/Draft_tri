@@ -128,10 +128,10 @@ body {
     .sidebar { 
       position: absolute;
       height: 620px;
-      width: 230px;
+      width: 210px;
       left: 0px;
       top-padding: 0%;
-      top: 0px;
+      top: -100px;
       border-top: solid;
     }
     .head{
@@ -203,7 +203,7 @@ body {
     .sidebar {
       position: absolute;
       height: 500px;
-      width: 250px;
+      width: 200px;
       left: 0px;
       padding: 0%;
       top: -200px;
