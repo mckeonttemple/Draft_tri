@@ -200,11 +200,11 @@ body {
     height:7px;
     }
     .sidebar {
-      height: 0px;
+      height: 500px;
       width: 250px;
       left: 0px;
       padding: 0%;
-      top: -100px;
+      top: 0px;
       border-top: solid;
     }
     .head{
