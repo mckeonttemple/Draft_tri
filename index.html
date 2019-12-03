@@ -147,7 +147,7 @@
            </div>
            <div class= "modal-body well">
              <a href = 'https://www.epa.gov/toxics-release-inventory-tri-program' ><button class="button1"> More About TRI</button><a>
-             <a href = 'https://www.pennmedicine.org/cancer/cancer-research'><button class="button1"> More About ACC.</button><a>
+             <a href = 'https://www.pennmedicine.org/cancer/cancer-research'><button class="button1"> More About ACC</button><a>
            </div>
            <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -390,12 +390,12 @@
     layers: [gray, philly1987_2007, philly1987_1997, acc1987_2007, acc1987_2017, philly1987_2017, acc1998_2002, philly1998_2002, acc2003_2008, philly2003_2008, acc2009_2012, philly2009_2012, philly2013_2017, acc2013_2017 ]
   });
 
-  var baseLayers = {
+  var overlays = {
     Grayscale: gray,
     Streetmap: L.esri.basemapLayer('Streets')
   };
 
-  var overlays = {
+  var baseLayers = {
     'Philadelphia 1987 to 1997': philly1987_1997,
     'Philadelphia 1987 to 2007': philly1987_2007,
     'Philadelphia 1987 to 2017': philly1987_2017,
