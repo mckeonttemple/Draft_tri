@@ -24,49 +24,6 @@
 
     html { height:100%;}
 
-/*body {
-    height:100%;
-    padding: 0;
-    margin: 0;
-}*/
-/*.map {
-  position: absolute;
-  left: 350px;
-  right: 0;
-  bottom: 0;
-  top: 0px;
-}
-*/
-/*.sidebar {
-  position: absolute;
-  left: 0px;
-  width: 330px;
-  top: 50px;
-  bottom: 0;
-  padding: 20px;
-  overflow: hidden;
-  overflow-y: auto;
-}*/
-
-/*.info {
-    z-index: 1000;
-    position: absolute;
-    right: 40%;
-    top: 5%;
-    padding: 6px 8px;
-    font: 14px Arial, Helvetica, sans-serif;
-    text-align: center;
-    background: white;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-}*/
-
-/*.info h1 {
-    font-size: 16px;
-    margin: 0 0 5px;
-    color: #777777;
-}*/
 .legend {
     line-height: 18px;
     color: #333333;
@@ -118,6 +75,7 @@
 
        <div class ="sidebar container-fluid">
         <div><h5>TRI Exposomics <br>Explorer</h5></div>
+        <div><h6>By <br>Tom McKeon</h^></div>
       <div class = "row">
 
         <center>
@@ -155,16 +113,10 @@
          </div>
        </div>
      </div>
-<!-- 
-    <div class="sidebar">
-      <div align = "right"><center><h3>TRI Lung Carcinogen Hazard Profile </h3></center></div>
-      <center><h2 class="h3">From <span style="color:blue">Prevention</span> to <span style="color:red">Care</span></h2></center>
-      <center><img class= "smaller-image" src = "https://www.upennprc.org/assets/abramson-cancer-2.png" style="width:300px;height:120px;"></img></center>
-    </div> -->
     
   <div id="map" class="map"></div>
     <!-- Sidebar -->
-    
+
 
 <script>
 
@@ -414,11 +366,6 @@
   };
 
   L.control.layers(baseLayers, overlays).addTo(map);
-  // L.control.layers( baseLayers, overlays).addTo(map);
-
-
-
-
 
   function resetHighlight(e) {
     philly1987_1997 .resetStyle(e.target).bringToBack();
@@ -519,9 +466,6 @@ legend.onAdd = function (map) {
     div.innerHTML += '<i style="background: #FFfa00 "></i><p>0-0.1</p>';
     div.innerHTML += '<hr>';
     div.innerHTML += '<i style="background: #DCDCDC"></i><p>No Lung Carcinogens</p>';
-    
-
-    // Return the Legend div containing the HTML content
 
     return div;
 };
